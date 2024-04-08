@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabase';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +6,9 @@ import "../App.css"
 function AccountDashboard() {
 
 
-    const [user, setUser] = [{}];
+
+
+    const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,7 +21,7 @@ function AccountDashboard() {
             })
         }
         getUserData();
-        console.log('resting')
+        console.log('testing')
     }, [])
 
 
@@ -41,6 +42,12 @@ function AccountDashboard() {
             </div>
 
 
+
+            <div className="filter">
+               
+                <label>Send/Recieve</label>
+            </div>
+
             <div className="filter">
                
                 <label>Log Out</label>
@@ -52,7 +59,12 @@ function AccountDashboard() {
            
         </div>
         <div className='right-panel'>
-            <p>testing</p>
+            
+            <div>
+                <div>
+                    <p>Account Details</p>
+                </div>
+            </div>
         </div>
         </div>
     </div>

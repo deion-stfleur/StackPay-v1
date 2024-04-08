@@ -9,6 +9,7 @@ import AuthenticatedRoute from './pages/AuthenticationRoute';
 // import { useAuth } from './hooks/auth'; 
 import { Navigate } from 'react-router-dom';
 import { supabase } from './supabase';
+import Signin from './pages/Signin';
 
 
 
@@ -49,7 +50,8 @@ function App() {
     <Route path="/" element={<Landing />} />
     <Route path="/demo-dash" element={<DemoScreen />} />
     <Route path='/signup' element={<SignUp />} />
-    <Route path="/account-dashboard" element={<AccountDashboard  />} />    
+    <Route path="/account-dashboard" element={<AccountDashboard  />} />  
+    <Route path="/signin" element={<Signin />} />  
   </Routes>
  </Router>
 
