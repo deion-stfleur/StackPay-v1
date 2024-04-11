@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { supabase } from '../supabase'
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,10 +34,14 @@ function Signin() {
 
     }
     return (
-        <div>
+        <div style={{height: '100%'}}>
+
+            <p className='si-text-h1'>Sign in</p>
             <div className='signup-form'>
 
                 <div className='inner-form'>
+
+                    <p style={{textAlign: 'center'}}>Sign in and start creating transactions.</p>
 
                     <input
                         className='if-input'
@@ -50,6 +55,7 @@ function Signin() {
                         className='if-input'
                         placeholder="Password"
                         value={password}
+                        type="password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
@@ -57,6 +63,8 @@ function Signin() {
 
                 </div>
                 <button className='sign-up-btn' onClick={handleSignIn}>Sign In</button>
+                <p style={{textAlign: 'center'}}>Don't have an account? <Link to="/signup" className='link-black'><span style={{textDecoration: 'underline'}}>Sign Up.</span></Link></p>
+
 
             </div>
 

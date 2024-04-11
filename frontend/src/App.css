@@ -11,6 +11,34 @@ html, body {
   height: 100%;
 }
 
+.dash-logo {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+
+.si-text-h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 26px;
+}
+
+
+.acc-info-btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 500px;
+  margin-top: 60px;
+}
+
+
+.dash-info-container {
+  width: 90%;
+  margin: auto;
+}
+
+
 .main-panel-container {
   display: flex;
   height: 100%;
@@ -39,6 +67,106 @@ html, body {
 
 .filter {
   margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  color: blue;
+}
+
+.filter:hover label {
+color: blue;
+}
+
+
+#basic-info {
+  padding: 21px;
+  background-color: white;
+  max-width: 61%;
+  display: block;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+
+#linked-banks {
+  background-color: white;
+  width: 61%;
+  margin-top: 30px;
+  padding: 21px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+
+#linked-banks input {
+  width: 90%;
+  border: unset;
+  padding: 9px;
+  background-color: #cbcbcb;
+  border-radius: 5px;
+}
+
+
+
+.save-btn {
+  max-width: 100px;
+  padding: 4px;
+  margin: auto;
+  background-color: rgb(80, 80, 240);
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+.save-btn p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.link-bank-btn {
+  max-width: 100px;
+  padding: 4px;
+  margin: auto;
+  background-color: rgb(80, 80, 240);
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+.link-bank-btn p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#basic-info input {
+  width: 90%;
+  border: unset;
+  padding: 9px;
+  background-color: #cbcbcb;
+  border-radius: 5px;
+}
+
+.filter {
+  align-items: center;
+  display: flex;
+}
+
+.link-dark {
+color: black;
+font-weight: bold;
+text-decoration: unset;
+font-size: 22px;
 }
 
 label {
@@ -48,9 +176,9 @@ label {
   cursor: pointer;
 }
 
-label:hover {
+/* label:hover {
   color: blue;
-}
+} */
 
 
 .nav-right {
@@ -69,6 +197,9 @@ label:hover {
   max-width: 400px;
   margin: auto;
   margin-top: 60px;
+  background-color: #c7c7c7;
+  padding: 20px;
+  border-radius: 4px;
 }
 
 .inner-form {
@@ -76,9 +207,16 @@ label:hover {
 }
 
 .if-input {
-  width: 100%;
-  margin-top: 20px;
+  width: 94%;
+  margin-top: 29px !important;
   padding: 5px;
+  margin: auto;
+  display: block;
+}
+
+.sn-text {
+  text-align: center;
+
 }
 
 
@@ -122,6 +260,14 @@ margin: auto;
 
 .link {
   text-decoration: unset;
+}
+
+input {
+  outline: none;
+}
+
+.link-black {
+  color: black;
 }
 
 .sc-btn {
@@ -189,8 +335,12 @@ margin: auto;
 footer {
   width: 95%;
   margin: auto;
+  height: 70px;
 }
 
+div#root {
+  height: 100%;
+}
 
 
 
@@ -249,5 +399,13 @@ footer {
 }
 footer {
   margin-top: 40px;
+}
+
+.left-panel {
+  display: none;
+}
+
+.right-panel {
+  width: 100%;
 }
 }

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { supabase } from '../supabase';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
-
+import {Link} from 'react-router-dom'
 const SignUp = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -62,10 +62,11 @@ const SignUp = () => {
   return (
     <>
     
-    <div>
+    <div style={{height: '100%'}}>
 
         <div className='signup-form'>
 
+            <p className='sn-text'>Sign up today to create an account.</p>
             <div className='inner-form'>
             <input
             className='if-input'
@@ -106,6 +107,7 @@ const SignUp = () => {
             </div>
             <button className='sign-up-btn' onClick={handleSignUp}>Sign Up</button>
 
+                <p style={{textAlign: 'center'}}>Already have an account? <Link to="/signin" className='link-black'><span style={{textDecoration: 'underline'}}>Sign in.</span></Link></p>
                 
         </div>
   </div>

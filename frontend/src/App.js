@@ -15,6 +15,9 @@ import Signin from './pages/Signin';
 
 function App() {
 
+
+
+
   return (
     <>
  <Router>
@@ -22,7 +25,7 @@ function App() {
   <nav>
 
     <div className='nav-row'>
-      <Link className='link' to="/">
+      <Link className='link-dark' to="/">
           <div>
             <p>StackPay</p>
           </div>
