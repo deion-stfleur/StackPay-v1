@@ -12,6 +12,17 @@ function AccountDashboard() {
 
 const [selectedFilter, setSelectedFilter] = useState('activity')
 const navigate = useNavigate();
+const [inputValue, setInputValue] = useState('')
+
+
+const handleValueClick = (number) => {
+    setInputValue((prevValue) => prevValue + number);
+}
+
+
+const clearNumbers = () => {
+    setInputValue('');
+}
 
 
 const handleClick = (filter) => {
@@ -65,6 +76,10 @@ useEffect(() => {
     }
 
 
+
+
+
+
   return (
     <div>
         <div className='main-panel-container'>
@@ -114,8 +129,74 @@ useEffect(() => {
             
 {selectedFilter === 'activity' && <div>
     
+<p style={{textAlign: 'center', color: 'gray', marginTop: 150, fontSize: 20}}>No transaction history</p>
 
-<div>
+
+    </div>}
+      {selectedFilter === 'money' && <div>Money Content</div>}
+      {selectedFilter === 'groups' && <div>
+        
+        {/* <p>Create Expense</p> */}
+
+
+        <div>
+        <p>How much would you like to contribute?</p>
+        
+        <div>
+      <input type="text" value={inputValue} readOnly />
+      <div className='calc-container'>
+     
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
+          <button className='calc-btn' key={number} onClick={() => handleValueClick(number)}>
+            {number}
+          </button>
+        ))}
+
+      </div>
+        <p onClick={clearNumbers}>clear</p>
+      <button onClick={() => console.log('Continue clicked')}>Continue</button>
+    </div>
+
+
+    <p>Make your deposit</p>
+    <p>Confirmation</p>
+    <p>payment sent</p>
+        </div>
+
+
+
+        
+        
+        </div>}
+      {selectedFilter === 'send-recieve' && <div>
+        
+                  <div>
+                <div>
+                    <p>Account Details</p>
+                    <p>To</p>
+                    <input />
+
+                    <p>For</p>
+                    <input />
+
+                    <p>From</p>
+                    <input />
+
+                    <div>
+                    <p>Send 🎉</p>
+                    </div>
+                </div>
+            </div>
+        
+        
+        </div>}
+      {selectedFilter === 'account' && <div>
+        
+    
+
+    <div className='dash-info-container'>
+
+    <div>
       {user ? (
         <div>
             
@@ -125,8 +206,6 @@ useEffect(() => {
         <p>Loading user data...</p>
       )}
     </div>
-    
-<div className='dash-info-container'>
                     <div className='acc-info-btn-row'>
 
                         <div className='acc-info-btn'>
@@ -204,40 +283,11 @@ useEffect(() => {
 
                 </div>
     
-    </div>}
-      {selectedFilter === 'money' && <div>Money Content</div>}
-      {selectedFilter === 'groups' && <div>
         
-        <p>Create +</p>
-
-
+        </div>
         
         
-        
-        </div>}
-      {selectedFilter === 'send-recieve' && <div>
-        
-                  <div>
-                <div>
-                    <p>Account Details</p>
-                    <p>To</p>
-                    <input />
-
-                    <p>For</p>
-                    <input />
-
-                    <p>From</p>
-                    <input />
-
-                    <div>
-                    <p>Send 🎉</p>
-                    </div>
-                </div>
-            </div>
-        
-        
-        </div>}
-      {selectedFilter === 'account' && <div>Account Content</div>}
+        }
 
 
 

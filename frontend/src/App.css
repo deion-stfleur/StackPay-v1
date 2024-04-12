@@ -223,9 +223,17 @@ label {
 
 
 .sign-up-btn {
-margin-top: 40px !important;
-display: block;
-margin: auto;
+  margin-top: 40px !important;
+  display: block;
+  margin: auto;
+  background-color: #3515d0;
+  border: unset;
+  color: white;
+  width: 26%;
+  border-radius: 2px;
+  padding: 4px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .main-h1 {
@@ -368,6 +376,30 @@ div#root {
   border: unset;
   margin-top: 12px;
   margin-bottom: unset;
+}
+
+.calc-container {
+  display: flex;
+    flex-wrap: wrap;
+    max-width: 100px;
+    align-items: center;
+}
+
+
+.calc-btn {
+  margin: 3px;
+}
+
+
+@media (max-width: 767px) {
+  .sign-up-btn {
+    width: 96%;
+  }
+
+  .signup-form {
+    max-width: unset;
+    width: 70%;
+  }
 }
 
 @media (max-width: 991px) {
