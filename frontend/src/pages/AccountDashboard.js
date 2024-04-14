@@ -4,8 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import "../App.css"
 import { FaRegClock, FaUserGroup } from "react-icons/fa6";
 import { BsBank2 } from "react-icons/bs";
-import { MdOutlinePayment, MdAccountCircle } from "react-icons/md";
+import { MdOutlinePayment, MdAccountCircle, MdOutlineVerified } from "react-icons/md";
 import { IoLogInOutline } from "react-icons/io5";
+import { RxAvatar } from "react-icons/rx";
+import { loadStripe } from '@stripe/stripe-js';
+import { SiYourtraveldottv } from "react-icons/si";
+import { FaHome } from "react-icons/fa";
+import { PiDotsThreeCircleDuotone } from "react-icons/pi";
+
+
+
+
+
 
 
 function AccountDashboard() {
@@ -13,6 +23,7 @@ function AccountDashboard() {
 const [selectedFilter, setSelectedFilter] = useState('activity')
 const navigate = useNavigate();
 const [inputValue, setInputValue] = useState('')
+
 
 
 const handleValueClick = (number) => {
@@ -29,6 +40,16 @@ const handleClick = (filter) => {
     setSelectedFilter(filter);
     navigate(`#${filter}`);
 }
+
+const [isOpen, setIsOpen] = useState(false);
+
+const openPanel = () => {
+  setIsOpen(true);
+};
+
+const closePanel = () => {
+  setIsOpen(false);
+};
 
 
 
@@ -129,7 +150,8 @@ useEffect(() => {
             
 {selectedFilter === 'activity' && <div>
     
-<p style={{textAlign: 'center', color: 'gray', marginTop: 150, fontSize: 20}}>No transaction history</p>
+<p className='no-tr-history'>No transaction history</p>
+<p className='inner-tr-history'>Import transactions</p>
 
 
     </div>}
@@ -140,27 +162,60 @@ useEffect(() => {
 
 
         <div>
-        <p>How much would you like to contribute?</p>
+
+            <div className='prof-row'>
+           
+           <div className='inner-prof-row'>
+           
+            <RxAvatar />
+            <RxAvatar />
+            <RxAvatar />
+            <RxAvatar />
+
+            <p className='main-dash-money'>$0.00</p>
+            </div>
+            </div>
+
+            <button className='add-exp-btn'  onClick={openPanel}>Add expense</button>
+
+
+
+            <div className='shared-exp-row'>
+
+                 <p className='exp-title'>What's the shared expense?</p>
+                 <p className='exp-subtitle'>Choose one of the categories below or create a custom one!</p>
+
+
+            <div className='inner-exp-row'>
+
+
+                <div className='exp-btn' onClick={openPanel}>
+                    <SiYourtraveldottv className='exp-logo' />
+                    <p className='exp-h3'>Travel</p>
+                </div>
+
+                <div className='exp-btn' onClick={openPanel}>
+                    <FaHome className='exp-logo' />
+                    <p className='exp-h3'>Home</p>
+                </div>
+
+                <div className='exp-btn' onClick={openPanel}>
+                    <PiDotsThreeCircleDuotone  className='exp-logo'  />
+                    <p className='exp-h3'>Custom</p>
+                </div>
+
+            </div>
+            </div>
+
         
         <div>
-      <input type="text" value={inputValue} readOnly />
-      <div className='calc-container'>
-     
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
-          <button className='calc-btn' key={number} onClick={() => handleValueClick(number)}>
-            {number}
-          </button>
-        ))}
-
-      </div>
-        <p onClick={clearNumbers}>clear</p>
-      <button onClick={() => console.log('Continue clicked')}>Continue</button>
+   
+    
     </div>
 
 
-    <p>Make your deposit</p>
-    <p>Confirmation</p>
-    <p>payment sent</p>
+
+
         </div>
 
 
@@ -199,8 +254,12 @@ useEffect(() => {
     <div>
       {user ? (
         <div>
-            
-          <p>{user.email}</p>
+            <div className='user-email-btn'>
+                <div  className='user-sett-row'>
+                <p className='user-email-btn-text'>{user.email}</p>
+            <MdOutlineVerified color='white' />
+            </div>
+            </div>
         </div>
       ) : (
         <p>Loading user data...</p>
@@ -292,6 +351,54 @@ useEffect(() => {
 
 
         </div>
+
+        <div className={`side-panel ${isOpen ? 'open' : ''}`}>
+      {/* Overlay for darkening the rest of the screen */}
+      <div className={`overlay ${isOpen ? 'visible' : ''}`} onClick={closePanel}></div>
+
+      {/* Content of the side panel */}
+      <div className="panel-content">
+        <p style={{marginTop: 70}}>How much would you like to contribute?</p>
+
+        <input placeholder="$0.00" className='cont-input' type="text" value={inputValue} readOnly />
+      <div className='calc-container'>
+     
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((number) => (
+          <button className='calc-btn' key={number} onClick={() => handleValueClick(number)}>
+            {number}
+          </button>
+        ))}
+
+      </div>
+
+<div className='cl-ct-row'>
+
+    <div className='clear-btn'>
+      <p onClick={clearNumbers}>clear</p>
+    </div>
+      <button onClick={() => console.log('Continue clicked')}>Continue</button>
+</div>
+
+      <p>Splits or "stacks"</p>
+
+<p>Split ratio</p>
+<p>user  $200</p>
+<p>friends $200</p>
+<p>message optional</p>
+    <p>Make your deposit button</p>
+
+
+    <p>Confirmation</p>
+    <p>payment sent</p>
+
+
+        {/* Add your content here */}
+      {/* <button className="open-btn" onClick={openPanel}>Open Panel</button> */}
+      <button className="close-btn" onClick={closePanel}>Close Panel</button>
+      </div>
+
+      {/* Open and close buttons */}
+    </div>
         </div>
     </div>
   );
