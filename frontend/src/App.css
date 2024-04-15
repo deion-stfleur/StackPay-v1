@@ -516,6 +516,29 @@ color: blue;
   display: flex;
 }
 
+.features-roles-row {
+  max-width: 1038px;
+  margin: auto;
+}
+
+.inner-features-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.iifr-box {
+  padding: 15px;
+}
+
+.ifr-box {
+  border: 1px solid black;
+  width: 46%;
+  margin: 0 9px 25px;
+  border-radius: 4px;
+}
+
+
+
 .panel-content {
   padding: 20px;
   background-color: #aeb8e6;

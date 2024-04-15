@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 function Landing() {
   return (
@@ -61,6 +62,48 @@ function Landing() {
                 <div>
                     <img style={{width:'100%', objectFit: 'cover'}} src="https://images.unsplash.com/photo-1705948354007-2aaf1259ac4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z3JwdXAlMjBwYXltZW50c3xlbnwwfHwwfHx8MA%3D%3D" />
                 </div>
+            </div>
+
+
+            <div className='features-roles-row'>
+
+
+                <div className='inner-features-row'>
+
+                <div className='ifr-box'>
+
+                    <div className='iifr-box'>
+                    <p>Plan</p>
+                    <p>Coordinate financial objectives with your group, setting targets and milestones for collective savings.</p>
+                    </div>
+                </div>
+
+                <div className='ifr-box'>
+
+                    <div className='iifr-box'>
+                    <p>Pool</p>
+                    <p>Pool resources together effortlessly, enabling group members to contribute towards common financial objectives.</p>
+                    </div>
+                </div>
+
+
+                <div className='ifr-box'>
+
+                    <div className='iifr-box'>
+                    <p>Track</p>
+                    <p>Monitor spending collectively, providing transparency and accountability for group expenses.</p>
+                    </div>
+                </div>
+
+                <div className='ifr-box'>
+
+                    <div className='iifr-box'>
+                    <p>Split</p>
+                    <p>Equitably distribute expenses among group members, ensuring fair and efficient payment management.</p>
+                    </div>
+                </div>
+                </div>
+
             </div>
         </div>
     </div>

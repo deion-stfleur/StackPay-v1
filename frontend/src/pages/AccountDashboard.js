@@ -111,10 +111,10 @@ useEffect(() => {
                <label>Activity</label>
            </div>
          
-            <div className="filter" onClick={() => handleClick('money')}>
+            {/* <div className="filter" onClick={() => handleClick('money')}>
                 <BsBank2 className='dash-logo' />
                 <label>Money</label>
-            </div>
+            </div> */}
 
             <div className="filter" onClick={() => handleClick('send-recieve')}>
                  <MdOutlinePayment className='dash-logo' />
