@@ -24,6 +24,84 @@ const [selectedFilter, setSelectedFilter] = useState('activity')
 const navigate = useNavigate();
 const [inputValue, setInputValue] = useState('')
 const [currentSection, setCurrentSection] = useState(1)
+const [fullName, setFullName] = useState('')
+const [address, setAddress] = useState('')
+const [email, setEmail] = useState('')
+const [phoneNumber, setPhoneNumber] = useState('')
+const [userInfo, setUserInfo] = useState(null);
+
+
+
+const [users, setUsers] = useState([]);
+
+
+useEffect(() => {
+fectUsers()
+fetchUserInfo();
+}, [])
+
+
+async function fectUsers() {
+    const {data} = await supabase
+        .from('user-info')
+        .select('*')
+        setUsers(data)
+        console.log(data)
+}
+
+
+
+const handleSaveInfo = async () => {
+    try {
+
+        const { error: insertError } = await supabase
+        .from('user-info')
+        .insert([
+          {
+            fullName,
+            address,
+            email,
+            phoneNumber
+          }
+        ]);
+  
+      if (insertError) {
+        throw insertError;
+      }
+    console.log('sussecfull')
+    setFullName('')
+    setAddress('')
+    setEmail('')
+    setPhoneNumber('')
+    } catch (error) {
+        console.log("Error saving info:", error.message)
+    }
+}
+
+const fetchUserInfo = async () => {
+    try {
+        // Fetch the user's information from the 'user-info' table
+        const { data, error } = await supabase
+            .from('user-info')
+            .select('*')
+            .eq('email', email); // Modify the condition as needed
+
+        if (error) {
+            throw error;
+        }
+
+        // Update the state with the fetched user information
+        if (data && data.length > 0) {
+            setUserInfo(data[0]);
+        } else {
+            setUserInfo(null);
+        }
+
+    } catch (error) {
+        console.log('Error fetching user info:', error.message);
+    }
+};
+
 
 const [showModal, setShowModal] = useState(false);
 
@@ -33,6 +111,8 @@ const handleCreateClick = () => {
 
 const handleCloseModal = () => {
     setShowModal(false);
+    setSearch('')
+    setSelectedPhoneNumbers('')
 };
 
 
@@ -128,8 +208,137 @@ useEffect(() => {
 
 
 
+    const [search, setSearch] = useState('');
+    const [results, setResults] = useState([]);
+    const [selectedPhoneNumbers, setSelectedPhoneNumbers] = useState([]);
 
 
+    // Function to fetch phone numbers from the database based on the search input
+    const fetchPhoneNumbers = async () => {
+        if (search.trim() === '') {
+            setResults([]);
+            return;
+        }
+
+        try {
+            const { data, error } = await supabase
+                .from('user-info')
+                .select('phoneNumber')
+                .ilike('phoneNumber', `%${search}%`); // Use ilike for case-insensitive matching
+
+            if (error) {
+                throw error;
+            }
+
+            // Set the results
+            setResults(data);
+        } catch (error) {
+            console.error('Error fetching phone numbers:', error.message);
+        }
+    };
+
+    // Effect to fetch phone numbers when the search input changes
+    useEffect(() => {
+        fetchPhoneNumbers();
+    }, [search]);
+
+    // Handle selection of a phone number from the results
+    const handleSelectPhoneNumber = (phoneNumber) => {
+        setSelectedPhoneNumbers((prev) => {
+            // Check if the phone number is already selected
+            if (prev.includes(phoneNumber)) {
+                // If the phone number is already selected, remove it from the array
+                return prev.filter((num) => num !== phoneNumber);
+            } else {
+                // Otherwise, add the phone number to the array
+                return [...prev, phoneNumber];
+            }
+        });
+    };
+    const [userr, setUserr] = useState(null); // Signed-in user
+    const [groupPayInitData, setGroupPayInitData] = useState([]);
+
+    const handleSave = async () => {
+        // if (!userr) {
+        //     console.error('User is not signed in');
+        //     return;
+        // }
+
+        try {
+            // Insert a new record into the "group-pay-init" table
+            const { data, error: insertError } = await supabase
+                .from('group-pay-init')
+                .insert([
+                    {
+                        user_id: user.id, // Owner's user ID
+                        phoneNumber: JSON.stringify(selectedPhoneNumbers), // Convert selected phone numbers to JSON string
+                        owner: true, // Set owner to true since the signed-in user is the creator
+                        // Add any other relevant data here (e.g., group name, description, etc.)
+                    },
+                ]);
+
+            if (insertError) {
+                throw insertError;
+            }
+
+            console.log('Group pay init data saved successfully:', data);
+            handleCloseModal();
+            // Update state to clear or reflect the new data
+            setGroupPayInitData(data);
+
+        } catch (error) {
+            console.error('Error saving group pay init data:', error.message);
+        }
+    };
+
+      const fetchUserPhoneNumbers = async () => {
+        try {
+          // Fetch the phone numbers for the signed-in user from the database
+          const { data, error } = await supabase
+            .from('user_phone_numbers')
+            .select('phone_number')
+            .eq('user_id', user.id); // Filter by the signed-in user's ID
+      
+          if (error) {
+            throw error;
+          }
+      
+          // Update the state with the fetched phone numbers
+          setSelectedPhoneNumbers(data.map(item => item.phone_number));
+      
+        } catch (error) {
+          console.error('Error fetching user phone numbers:', error.message);
+        }
+      };
+      
+      // Call the function to fetch user's phone numbers when the component mounts
+      useEffect(() => {
+        fetchUserPhoneNumbers();
+      }, []);
+
+
+      useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // Fetch data from the database for the signed-in user
+                const { data, error } = await supabase
+                    .from('group-pay-init')
+                    .select('*')
+                    .eq('user_id', user.id); // Filter by the user's ID
+    
+                if (error) {
+                    throw error;
+                }
+    
+                // Update state with fetched data
+                setGroupPayInitData(data);
+            } catch (error) {
+                console.error('Error fetching data:', error.message);
+            }
+        };
+    
+        fetchData();
+    }, [user]);
   return (
     <div>
         <div className='acct-dash-sep'></div>
@@ -146,10 +355,10 @@ useEffect(() => {
                 <label>Money</label>
             </div> */}
 
-            <div className="filter" onClick={() => handleClick('send-recieve')}>
+            {/* <div className="filter" onClick={() => handleClick('send-recieve')}>
                  <MdOutlinePayment className='dash-logo' />
                 <label>Send/Recieve</label>
-            </div>
+            </div> */}
 
             <div className="filter" onClick={() => handleClick('groups')}>
                  <FaUserGroup className='dash-logo' />
@@ -257,6 +466,26 @@ useEffect(() => {
                     <p className='cgb-h1'>Create +</p>
                 </div>
                 </div>
+
+                <div>
+                {groupPayInitData.length > 0 ? (
+    <div>
+        <h3>Group Pay Init Data:</h3>
+        <ul className='gp-col' onClick={openPanel}>
+            {groupPayInitData.map((item) => (
+                <li className='group-box' key={item.id}>
+                    {/* <p>User ID: {item.user_id}</p> */}
+                    <p>Members: {item.phoneNumber}</p>
+                    {/* Add more data fields as needed */}
+                </li>
+            ))}
+        </ul>
+    </div>
+) : (
+    <p>No group pay init data found</p>
+)}
+                </div>
+
             </div>
 
 
@@ -331,19 +560,49 @@ useEffect(() => {
 
                         <p>Basic Info</p>
 
+                        <div>
+                <h2>User Information</h2>
+                {userInfo ? (
+                    <div>
+                        <p><strong>Full Name:</strong> {userInfo.fullName}</p>
+                        <p><strong>Address:</strong> {userInfo.address}</p>
+                        <p><strong>Email:</strong> {userInfo.email}</p>
+                        <p><strong>Phone Number:</strong> {userInfo.phoneNumber}</p>
+                    </div>
+                ) : (
+                    <p>No user information found</p>
+                )}
+            </div>
+
                         <p>Full Name</p>
-                        <input placeholder='Full Name' />
+                        <input 
+                        placeholder='Full Name' 
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        />
 
                         <p>Address</p>
-                        <input placeholder='Address' />
+                        <input 
+                        placeholder='Address'
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        />
 
                         <p>Email</p>
-                        <input placeholder='Email' />
+                        <input 
+                        placeholder='Email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
 
                         <p>Phone</p>
-                        <input placeholder='Phone' />
+                        <input 
+                        placeholder='Phone'
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
 
-                        <div className='save-btn'>
+                        <div onClick={handleSaveInfo} className='save-btn'>
                             <p>Save</p>
                         </div>
                     </div>
@@ -525,15 +784,43 @@ useEffect(() => {
                 <div className='modal-dash'>
                     <div className='modal-content-dash'>
                         <span className='close-dash' onClick={handleCloseModal}>&times;</span>
-                        <h2>Create Group</h2>
-                        <p>Search for users.</p>
+                        <h2 style={{marginBottom: 6}}>Create Group</h2>
+                        <p style={{color:'gray', marginTop: 'unset'}}>Search for users.</p>
 
-                        <input placeholder='enter Phone Number' />
+                        <input
+                placeholder='Enter Phone Number'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className='active-search-input'
+            />
 
-                        <p>Share</p>
+            {/* Dropdown list to display search results */}
+            {results.length > 0 && (
+                <ul className='dropdown-list'>
+                    {results.map((result, index) => (
+                        <li className='phn-text' key={index} onClick={() => handleSelectPhoneNumber(result.phoneNumber)}>
+                            {result.phoneNumber}
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {/* Display the selected phone number */}
+            <p>Selected Phone Number: 
+
+            {selectedPhoneNumbers.length > 0 ? (
+                    selectedPhoneNumbers.map((phoneNumber, index) => (
+                        <p key={index}>{phoneNumber}</p>
+                    ))
+                ) : (
+                    <p>No phone numbers selected</p>
+                )}
+            </p>
+
+                      
 
 
-                        <div>
+                        <div onClick={handleSave} className='save-mdl-btn'>
                         <p>save</p>
                         </div>
                     </div>

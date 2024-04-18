@@ -700,6 +700,58 @@ color: blue;
   margin-top: 20px;
 }
 
+.phn-text {
+  display: block;
+}
+
+.group-box {
+  border: 1px solid black;
+  width: 30%;
+  gap: 6px;
+  max-width: 400px;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.17);
+  display: block;
+}
+
+.gp-col {
+  padding-left: unset;
+}
+
+
+.active-search-input {
+  outline: none;
+    width: 95%;
+    padding: 7px;
+    border: unset;
+    border-bottom: 1px solid;
+}
+
+.dropdown-list {
+  padding-left: unset;
+}
+
+.save-mdl-btn {
+  background-color: #3515d0;
+  border-radius: 4px;
+  cursor: pointer;
+  max-width: 100px;
+  text-align: center;
+}
+
+.save-mdl-btn p {
+  font-size: 20px;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  padding: 3px;
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
 .ifr-box {
   border: 1px solid black;
   border-radius: 4px;
@@ -809,6 +861,10 @@ font-size: 20px;
 @media (max-width: 767px) {
   .sign-up-btn {
     width: 96%;
+  }
+  
+  .group-box {
+    width: unset;
   }
 
   .signup-form {

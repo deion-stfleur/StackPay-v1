@@ -27,6 +27,8 @@ const SignUp = () => {
           }
           console.log(data)
 
+      
+
     
           console.log('Account created successfully!');
         } catch (error) {
@@ -98,13 +100,13 @@ const SignUp = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
-            {/* <input
+            <input
             className='if-input'
             type="tel"
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
-            /> */}
+            />
 
             </div>
             {error && <div className="error">{error}</div>}
