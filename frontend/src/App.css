@@ -11,6 +11,10 @@ html, body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .dash-logo {
   margin-right: 20px;
   font-size: 20px;
@@ -310,7 +314,8 @@ input {
 .main-second-section {
   display: flex;
   align-items: center;
-  margin-bottom: 90px;
+  margin-bottom: 140px;
+  margin-top: 66px;
 }
 
 .ms-left {
@@ -425,14 +430,161 @@ div#root {
   margin: 0 auto;
 }
 
+.credit-card {
+  width: 84%;
+  height: 158px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+}
+.card-number {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.card-holder,
+.expiry-date {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.card-type {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-prof-box {
+  margin-top: 80px;
+  /* width: 90%;
+  margin: auto; */
+}
+
+.cgb-h1 {
+  border: 1px solid black;
+  padding: 6px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.gcc-comp {
+  width: 90%;
+  margin: auto;
+}
+
+
+.modal-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure modal appears on top of other content */
+}
+
+.modal-content-dash {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  width: 90%;
+  max-width: 700px;
+}
+
+.close-dash {
+  /* position: absolute;
+  top: 10px;
+  right: 10px; */
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.close-dash:hover {
+  color: #333;
+}
+
+
+
+
+.group-container-create {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  max-width: 400px;
+  align-items: center;
+}
+
+#mg-60 {
+  margin-top: 70px;
+}
+.visa {
+  width: 90px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png');
+  background-size: cover;
+}
+.mastercard {
+  width: 50px;
+  height: 30px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/1200px-Mastercard_2019_logo.svg.png');
+  background-size: cover;
+}
+
+.inner-split-cat-row {
+  background-color: white;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.ct-split-btn {
+  margin-top: 40px;
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ct-split-btn p {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.iscr-box {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+
+.iscr-input {
+  width: 98%;
+  margin-top: 40px;
+}
+
 .cont-input {
   width: 90%;
   border: unset;
-  padding: 5px;
+  padding: 9px;
   border-radius: 6px;
   margin-bottom: 30px;
 }
 
+.sr-h3 {
+  font-weight: bold;
+}
+
+.man-split-cat {
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .add-exp-btn:hover {
 color: blue;
@@ -516,25 +668,54 @@ color: blue;
   display: flex;
 }
 
-.features-roles-row {
-  max-width: 1038px;
-  margin: auto;
-}
+
 
 .inner-features-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 26px;
+}
+
+.ct-pan-btn {
+  width: 50%;
+  padding: 6px;
+  cursor: pointer;
+  border: unset;
+  border-radius: 4px;
 }
 
 .iifr-box {
-  padding: 15px;
+  padding: 67px;
+}
+
+.features-roles-row {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .ifr-box {
   border: 1px solid black;
-  width: 46%;
-  margin: 0 9px 25px;
   border-radius: 4px;
+  flex: 1 1 492px;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.17);
+}
+
+.fbox-title {
+  font-size: 30px;
+    font-weight: bold;
+    margin-bottom: unset;
+}
+
+.fbox-sub {
+  font-size: 19px;
+  line-height: 30px;
 }
 
 
@@ -566,6 +747,10 @@ margin: auto;
 background-color: white;
 border: 1px solid black;
 cursor: pointer;
+width: 39%;
+text-align: center;
+border-radius: 3px;
+
 }
 
 .clear-btn:hover .clear-btn p {
@@ -573,8 +758,8 @@ color: blue;
 }
 
 .clear-btn p {
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 4px;
+  margin-bottom: 3px;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -612,6 +797,12 @@ font-size: 20px;
 .calc-btn {
   margin: 3px;
   width: 30%;
+  padding: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 18px; 
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 
@@ -623,6 +814,17 @@ font-size: 20px;
   .signup-form {
     max-width: unset;
     width: 70%;
+  }
+
+  .modal-content-dash {
+    width: 85%;
+  }
+
+  #basic-info {
+    max-width: unset;
+  }
+  #linked-banks {
+    width: unset;
   }
 }
 
@@ -664,4 +866,10 @@ footer {
 .right-panel {
   width: 100%;
 }
+}
+
+@media (min-width: 1632px) {
+  .ifr-box {
+    flex: 1 1 692px;
+  }
 }

@@ -10,6 +10,7 @@ function Signin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [error, setError] = useState(null)
 
 
 
@@ -30,6 +31,7 @@ function Signin() {
               navigate('/account-dashboard')
         } catch (error) {
             console.error('Error signing in:', error.message)
+            setError('We were unable to find an account matching those credentials. :(')
         }
 
     }
@@ -62,6 +64,7 @@ function Signin() {
 
 
                 </div>
+                {error && <div className="error">{error}</div>}
                 <button className='sign-up-btn' onClick={handleSignIn}>Sign In</button>
                 <p style={{textAlign: 'center'}}>Don't have an account? <Link to="/signup" className='link-black'><span style={{textDecoration: 'underline'}}>Sign Up.</span></Link></p>
 

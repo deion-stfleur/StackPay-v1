@@ -10,6 +10,7 @@ const SignUp = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
+    const [error, setError] = useState(null)
 
     const handleSignUp = async () => {
         try {
@@ -30,7 +31,8 @@ const SignUp = () => {
           console.log('Account created successfully!');
         } catch (error) {
           console.error('Error signing up:', error.message);
-          alert('Error signing up:', error.message);
+        //   alert('Error signing up:', error.message);
+        setError('Please fill out all the information correctly :)')
         }
       };
 
@@ -105,6 +107,7 @@ const SignUp = () => {
             /> */}
 
             </div>
+            {error && <div className="error">{error}</div>}
             <button className='sign-up-btn' onClick={handleSignUp}>Sign Up</button>
 
                 <p style={{textAlign: 'center'}}>Already have an account? <Link to="/signin" className='link-black'><span style={{textDecoration: 'underline'}}>Sign in.</span></Link></p>

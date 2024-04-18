@@ -16,38 +16,58 @@ import Signin from './pages/Signin';
 function App() {
 
 
+  const [showNav, setShowNav] = useState(true)
+
+
+  useEffect(() => {
+    const pathsToHideNav = ['/account-dashboard',]; // Add your paths here
+    const currentPath = window.location.pathname;
+    const shouldHideNav = pathsToHideNav.some(path => currentPath.endsWith(path));
+
+    setShowNav(!shouldHideNav);
+  }, []);
+
+
 
 
   return (
     <>
  <Router>
 
+  <div>
+  {showNav && (
+  <>
   <nav>
 
-    <div className='nav-row'>
-      <Link className='link-dark' to="/">
-          <div>
-            <p>StackPay</p>
-          </div>
-      </Link>
+              <div className='nav-row'>
+                <Link className='link-dark' to="/">
+                  <div>
+                    <p>StackPay</p>
+                  </div>
+                </Link>
 
 
-      <div className='nav-right'>
+                <div className='nav-right'>
 
-        <Link to="/signup" className='link'>
-          <div className='td-btn'>
-            <p className='td-text'>Try Demo</p>
-          </div>
-        </Link>
-        <div className='spc'></div>
-        <div className='lm-btn'>
-          <p className='lm-text'>Learn More</p>
-        </div>
-      </div>
-    </div>
-  </nav>
+                  <Link to="/signup" className='link'>
+                    <div className='td-btn'>
+                      <p className='td-text'>Try Demo</p>
+                    </div>
+                  </Link>
+                  <div className='spc'></div>
 
-  <hr className='main-line' />
+                  <a style={{textDecoration:'none'}} href="#learn-more">
+                  <div className='lm-btn'>
+                    <p className='lm-text'>Learn More</p>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </nav><hr className='main-line' /></>
+
+  )}
+  </div>
+
 
   <Routes>
     <Route path="/" element={<Landing />} />

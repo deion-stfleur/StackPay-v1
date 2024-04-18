@@ -16,14 +16,21 @@ function Landing() {
                     <p className='supp-copy'>Say goodbye to the hassle of splitting costs. Our platform makes managing group payments for trips and experiences a breeze.</p>
 
                     <div className='sc-inner'>
-
+                        
+                        <Link style={{color: 'black'}} to="/signup" className='link'>
                         <div className='sc-btn'>
                             <p className='sc-btn-text'>Get Started</p>
                         </div>
+                        </Link>
 
+
+
+                    <a style={{textDecoration: 'none'}} href="#learn-more">
                         <div className='sc-lm-btn'>
                             <p className='sc-lm-btn-text'>Learn More</p>
                         </div>
+                    </a>
+                     
                     </div>
                 </div>
             </div>
@@ -65,7 +72,7 @@ function Landing() {
             </div>
 
 
-            <div className='features-roles-row'>
+            <div id="learn-more" className='features-roles-row'>
 
 
                 <div className='inner-features-row'>
@@ -73,16 +80,16 @@ function Landing() {
                 <div className='ifr-box'>
 
                     <div className='iifr-box'>
-                    <p>Plan</p>
-                    <p>Coordinate financial objectives with your group, setting targets and milestones for collective savings.</p>
+                    <p className='fbox-title'>Plan</p>
+                    <p className='fbox-sub'>Coordinate financial objectives with your group, setting targets and milestones for collective savings.</p>
                     </div>
                 </div>
 
                 <div className='ifr-box'>
 
                     <div className='iifr-box'>
-                    <p>Pool</p>
-                    <p>Pool resources together effortlessly, enabling group members to contribute towards common financial objectives.</p>
+                    <p className='fbox-title'>Pool</p>
+                    <p className='fbox-sub'>Pool resources together effortlessly, enabling group members to contribute towards common financial objectives.</p>
                     </div>
                 </div>
 
@@ -90,16 +97,16 @@ function Landing() {
                 <div className='ifr-box'>
 
                     <div className='iifr-box'>
-                    <p>Track</p>
-                    <p>Monitor spending collectively, providing transparency and accountability for group expenses.</p>
+                    <p className='fbox-title'>Track</p>
+                    <p className='fbox-sub'>Monitor spending collectively, providing transparency and accountability for group expenses.</p>
                     </div>
                 </div>
 
                 <div className='ifr-box'>
 
                     <div className='iifr-box'>
-                    <p>Split</p>
-                    <p>Equitably distribute expenses among group members, ensuring fair and efficient payment management.</p>
+                    <p className='fbox-title'>Split</p>
+                    <p className='fbox-sub'>Equitably distribute expenses among group members, ensuring fair and efficient payment management.</p>
                     </div>
                 </div>
                 </div>
