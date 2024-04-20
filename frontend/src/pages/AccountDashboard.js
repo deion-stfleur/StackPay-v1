@@ -11,7 +11,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { SiYourtraveldottv } from "react-icons/si";
 import { FaHome } from "react-icons/fa";
 import { PiDotsThreeCircleDuotone } from "react-icons/pi";
-
+import { FaPen } from "react-icons/fa";
 
 
 
@@ -470,10 +470,10 @@ useEffect(() => {
                 <div>
                 {groupPayInitData.length > 0 ? (
     <div>
-        <h3>Group Pay Init Data:</h3>
         <ul className='gp-col' onClick={openPanel}>
             {groupPayInitData.map((item) => (
                 <li className='group-box' key={item.id}>
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww" style={{width: '90%',margin: 'auto'}} />
                     {/* <p>User ID: {item.user_id}</p> */}
                     <p>Members: {item.phoneNumber}</p>
                     {/* Add more data fields as needed */}
@@ -482,7 +482,7 @@ useEffect(() => {
         </ul>
     </div>
 ) : (
-    <p>No group pay init data found</p>
+    <p style={{textAlign: 'center', color: 'gray'}}>No groups have beenn created yet..</p>
 )}
                 </div>
 
@@ -547,10 +547,10 @@ useEffect(() => {
                         <div className='acc-info-btn'>
                             <p>Security and privacy</p>
                         </div>
-
+{/* 
                         <div className='acc-info-btn'>
                             <p>Limits</p>
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -686,11 +686,11 @@ useEffect(() => {
 </div>}
       {currentSection === 2 && <div>
         
-        <p onClick={handleLeftArrowClick}>Back</p>
+        {/* <p onClick={handleLeftArrowClick}>Back</p> */}
         
         <div class="credit-card">
   <div class="card-number">1234 5678 9012 3456</div>
-  <div class="card-holder">Card Holder</div>
+  <div class="card-holder">Your Card <FaPen className='pen' /></div>
   <div class="expiry-date">12/24</div>
   <div class="card-type">
     <div class="visa"></div>
@@ -698,7 +698,9 @@ useEffect(() => {
   </div>
 </div>
 
-<button className='ct-pan-btn' onClick={handleRightArrowClick}>Continue</button>
+
+
+<button id="btn-1-fix" className='ct-pan-btn' onClick={handleRightArrowClick}>Continue</button>
         
         </div>}
       {currentSection === 3 && <div>

@@ -391,10 +391,16 @@ div#root {
 
 .prof-row {
   display: flex;
-  text-align: cneter;
+  text-align: center;
   margin: auto;
   justify-content: center;
   align-items: center;
+  background-color: #5b7fff;
+  width: 90%;
+  margin-top: 50px;
+  border-radius: 6px;
+  color: white;
+  margin-bottom: 40px;
 }
 
 
@@ -428,6 +434,29 @@ div#root {
   cursor: pointer;
   display: block;
   margin: 0 auto;
+  background-color: #40413f;
+  border: unset;
+  border-radius: 2px;
+  padding: 7px;
+  max-width: 400px;
+  color: white;
+  font-weight: bold;
+  width: 10%;
+}
+
+#btn-1-fix {
+  margin-top: 30px !important;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.pen {
+  cursor: pointer;
+}
+
+.pen:hover {
+  color: blue;
 }
 
 .credit-card {
@@ -437,7 +466,9 @@ div#root {
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
+  margin-top: 60px !important;
+  margin: auto;
+  display: block;
 }
 .card-number {
   font-size: 24px;
@@ -466,6 +497,12 @@ div#root {
   border-radius: 100px;
   cursor: pointer;
 }
+
+.cgb-h1:hover {
+  background-color: rgb(24, 108, 211);
+  color: white;
+}
+
 
 .gcc-comp {
   width: 90%;
@@ -586,10 +623,7 @@ div#root {
   justify-content: space-between;
 }
 
-.add-exp-btn:hover {
-color: blue;
 
-}
 
 
 .user-email-btn {
@@ -706,7 +740,7 @@ color: blue;
 
 .group-box {
   border: 1px solid black;
-  width: 30%;
+  width: 40%;
   gap: 6px;
   max-width: 400px;
   margin-bottom: 20px;
@@ -719,6 +753,10 @@ color: blue;
 
 .gp-col {
   padding-left: unset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
 }
 
 
@@ -835,11 +873,19 @@ font-size: 20px;
 .inner-tr-history {
   text-align: center;
   cursor: pointer;
+  border: 1px solid blue;
+  border-radius: 100px;
+  max-width: 200px;
+  margin: auto;
+  padding: 5px;
+  background-color: #5b7fff;
+  color: white;
+  font-weight: bold;
 }
 
-.inner-tr-history:hover {
+/* .inner-tr-history:hover {
   color: blue;
-}
+} */
 
 .inner-prof-row {
   display: block;
