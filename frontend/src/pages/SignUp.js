@@ -68,53 +68,70 @@ const SignUp = () => {
     
     <div style={{height: '100%'}}>
 
-        <div className='signup-form'>
+        <div className='su-col-container'>
 
-            <p className='sn-text'>Sign up today to create an account.</p>
-            <div className='inner-form'>
-            <input
-            className='if-input'
-            type="text"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
-            className='if-input'
-            type="text"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            />
-            <input
-            className='if-input'
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            />
-                 <input
-            className='if-input'
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-            className='if-input'
-            type="tel"
-            placeholder="Phone Number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            />
+            <div className='leftPanel'>
+
+                <div>
+                    <p className='su-new-header'>Sign Up</p>
+                    <p className='sn-text'>Sign up today to create an account.</p>
+                </div>
+            <div className='signup-form'>
+
+<div className='inner-form'>
+<input
+className='if-input'
+type="text"
+placeholder="First Name"
+value={firstName}
+onChange={(e) => setFirstName(e.target.value)}
+/>
+<input
+className='if-input'
+type="text"
+placeholder="Last Name"
+value={lastName}
+onChange={(e) => setLastName(e.target.value)}
+/>
+<input
+className='if-input'
+type="email"
+placeholder="Email"
+value={email}
+onChange={(e) => setEmail(e.target.value)}
+/>
+     <input
+className='if-input'
+type="password"
+placeholder="Password"
+value={password}
+onChange={(e) => setPassword(e.target.value)}
+/>
+<input
+className='if-input'
+type="tel"
+placeholder="Phone Number"
+value={phoneNumber}
+onChange={(e) => setPhoneNumber(e.target.value)}
+/>
+
+</div>
+{error && <div className="error">{error}</div>}
+<button className='sign-up-btn' onClick={handleSignUp}>Sign Up</button>
+
+    <p style={{textAlign: 'center'}}>Already have an account? <Link to="/signin" className='link-black'><span style={{textDecoration: 'underline'}}>Sign in.</span></Link></p>
+    
+</div>
 
             </div>
-            {error && <div className="error">{error}</div>}
-            <button className='sign-up-btn' onClick={handleSignUp}>Sign Up</button>
 
-                <p style={{textAlign: 'center'}}>Already have an account? <Link to="/signin" className='link-black'><span style={{textDecoration: 'underline'}}>Sign in.</span></Link></p>
-                
+        <div className='rightPanel'>
+
         </div>
+
+        </div>
+
+     
   </div>
     </>
   )

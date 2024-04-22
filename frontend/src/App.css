@@ -7,8 +7,11 @@
   margin-top: 10px;
 }
 
-html, body {
+body, html {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  width: 100%;
 }
 
 html {
@@ -20,11 +23,30 @@ html {
   font-size: 20px;
 }
 
+.su-col-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Left panel for the sign-up form */
+.leftPanel {
+  width: 40%;  /* Set the width of the left panel to 40% */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.rightPanel {
+  width: 60%;  /* Set the width of the right panel to 60% */
+  background-color: #141414;;
+}
+
 
 .si-text-h1 {
   text-align: center;
   margin-top: 80px;
   font-size: 26px;
+  font-weight: bold;
 }
 
 
@@ -197,11 +219,16 @@ label {
   cursor: pointer;
 }
 
+.su-new-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
 .signup-form {
   max-width: 400px;
   margin: auto;
-  margin-top: 60px;
-  background-color: #c7c7c7;
+  margin-top: 14px;
   padding: 20px;
   border-radius: 4px;
 }
@@ -213,9 +240,11 @@ label {
 .if-input {
   width: 94%;
   margin-top: 29px !important;
-  padding: 5px;
+  padding: 9px;
   margin: auto;
   display: block;
+  border-radius: unset;
+  border: 1px solid #707070;
 }
 
 .sn-text {
@@ -246,22 +275,25 @@ label {
   font-weight: bold;
   width: 50%;
   margin-right: 50px;
+  color: white;
 }
 
 .main-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
+  margin: auto;
 }
 
 .main-container {
-  width: 95%;
   margin: auto;
 }
 
 .supp-copy {
   font-size: 24px;
   line-height: 130%;
+  color: white;
 }
 
 .td-text {
@@ -293,8 +325,9 @@ input {
 }
 
 .sc-lm-btn {
-  background-color: black;
+  background-color: rgb(24, 108, 211);
   padding: 10px;
+  border-radius: 4px;
 }
 
 .sc-lm-btn-text {
@@ -314,8 +347,10 @@ input {
 .main-second-section {
   display: flex;
   align-items: center;
-  margin-bottom: 140px;
-  margin-top: 66px;
+  margin-bottom: 140px !important;
+  margin-top: 66px !important;
+  width: 95%;
+  margin: auto;
 }
 
 .ms-left {
@@ -442,6 +477,10 @@ div#root {
   color: white;
   font-weight: bold;
   width: 10%;
+}
+
+.sc-gray-bg {
+  background-color: #141414;
 }
 
 #btn-1-fix {
@@ -708,6 +747,8 @@ div#root {
   display: flex;
   flex-wrap: wrap;
   gap: 26px;
+  width: 95%;
+  margin: auto;
 }
 
 .ct-pan-btn {
@@ -718,8 +759,14 @@ div#root {
   border-radius: 4px;
 }
 
+.footer-line {
+  margin-top: unset;
+  border: unset;
+  background-color: transparent;
+}
+
 .iifr-box {
-  padding: 67px;
+  padding: 5% 5%;
 }
 
 .features-roles-row {
@@ -801,11 +848,13 @@ div#root {
   font-size: 30px;
     font-weight: bold;
     margin-bottom: unset;
+    color: rgb(24, 108, 211);
 }
 
 .fbox-sub {
   font-size: 19px;
   line-height: 30px;
+  max-width: 330px;
 }
 
 
@@ -930,9 +979,68 @@ font-size: 20px;
   }
 }
 
+.ms-lr-col-container {
+  width: 95%;
+  margin: auto;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  width: 80%;
+}
+
+.swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+
+.swiper-slide:nth-child(3n) {
+  width: 40%;
+}
+
 @media (max-width: 991px) {
   .main-row {
     display: unset;
+  }
+
+  .rightPanel {
+    display: none;
+  }
+  .leftPanel {
+    width: 100%;
+  }
+  .ifr-box {
+    border: 1px solid black;
+    border-radius: 4px;
+    flex: 1 1 192px;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.17);
+}
+
+  .ms-l-col-container {
+    width: 95%;
+    margin: auto;
   }
 
   .main-img {
@@ -943,17 +1051,48 @@ font-size: 20px;
     margin-bottom: 30px;
 }
 .main-h1 {
-  width: unset;
-  margin-right: unset;
+  width: 95%;
+  padding-top: 21px;
+  margin: auto;
+}
+
+.supp-copy {
+  font-size: 24px;
+  line-height: 130%;
+  color: white;
+  width: 95%;
+  margin: auto;
+  margin-top: 15px !important;
+}
+
+.sc-inner {
+  display: block;
+  justify-content: space-between;
+  max-width: unset;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+  margin-top: 22px;
+}
+
+.sc-lm-btn {
+  background-color: rgb(24, 108, 211);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 11px;
 }
 
 .main-second-section {
   display: unset;
 }
 .ms-left {
-  width: unset;
+  width: 95%;
   margin-right: unset;
+  margin: auto;
 }
+
+
+
 .msl-row {
   margin-bottom: 40px;
 }

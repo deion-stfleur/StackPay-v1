@@ -1,11 +1,25 @@
 import React from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+import { Pagination } from 'swiper/modules';
 
 function Landing() {
   return (
+
+    <>
+
+   
+    
     <div className='main-container'>
 
+      <section className='sc-gray-bg'>
         <div>
 
             <div className='main-row'>
@@ -17,7 +31,7 @@ function Landing() {
 
                     <div className='sc-inner'>
                         
-                        <Link style={{color: 'black'}} to="/signup" className='link'>
+                        <Link style={{color: 'white'}} to="/signup" className='link'>
                         <div className='sc-btn'>
                             <p className='sc-btn-text'>Get Started</p>
                         </div>
@@ -35,10 +49,13 @@ function Landing() {
                 </div>
             </div>
         </div>
-
-        <div>
+        <div className='ms-lr-col-container'>
             <img className='main-img' src="https://images.unsplash.com/photo-1616077167599-cad3639f9cbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
         </div>
+      </section>
+        
+
+
 
 
 
@@ -66,12 +83,13 @@ function Landing() {
                     </div>
                 </div>
 
-                <div>
+                <div className='ms-l-col-container'>
                     <img style={{width:'100%', objectFit: 'cover'}} src="https://images.unsplash.com/photo-1705948354007-2aaf1259ac4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z3JwdXAlMjBwYXltZW50c3xlbnwwfHwwfHx8MA%3D%3D" />
                 </div>
             </div>
 
 
+            <section className=''>
             <div id="learn-more" className='features-roles-row'>
 
 
@@ -112,8 +130,12 @@ function Landing() {
                 </div>
 
             </div>
+            </section>
+
+          
         </div>
     </div>
+    </>
   )
 }
 

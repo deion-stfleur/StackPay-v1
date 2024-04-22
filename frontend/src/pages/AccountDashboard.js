@@ -272,7 +272,8 @@ useEffect(() => {
                     {
                         user_id: user.id, // Owner's user ID
                         phoneNumber: JSON.stringify(selectedPhoneNumbers), // Convert selected phone numbers to JSON string
-                        owner: true, // Set owner to true since the signed-in user is the creator
+                        owner: true,
+                        // Set owner to true since the signed-in user is the creator
                         // Add any other relevant data here (e.g., group name, description, etc.)
                     },
                 ]);

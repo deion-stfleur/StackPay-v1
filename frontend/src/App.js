@@ -63,7 +63,9 @@ function App() {
                   </a>
                 </div>
               </div>
-            </nav><hr className='main-line' /></>
+            </nav>
+            {/* <hr className='main-line' /> */}
+            </>
 
   )}
   </div>
