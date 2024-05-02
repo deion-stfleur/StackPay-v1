@@ -34,18 +34,17 @@ function AccountDashboard() {
     
 
 
- 
-
-
-  
-    
-
-
-  
-
-
-
-
+ const handleShareClick = (item) => {
+    const eventUrl = `${window.location.origin}/event/${item.id}`;
+    navigator.clipboard.writeText(eventUrl)
+    .then(() => {
+      alert('URL copied to clipboard!');
+      console.log(eventUrl)
+    })
+    .catch((error) => {
+      console.error('Failed to copy URL:', error);
+    });
+ }
       
 
 
@@ -490,15 +489,25 @@ function AccountDashboard() {
                             <div>
                                 {groupPayInitData.length > 0 ? (
                                     <div>
-                                        <ul className='gp-col' onClick={openPanel}>
+                                        <ul className='gp-col'>
                                             {groupPayInitData.map((item) => (
                                                 <li className='group-box' key={item.id}>
                                                     <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww" style={{ width: '90%', margin: 'auto' }} />
                                                     {/* <p>User ID: {item.user_id}</p> */}
                                                     <p>Members: {item.phoneNumber}</p>
                                                     {/* Add more data fields as needed */}
+                                                    
+                                                    <div>
+                                                    <div className='sh-btn-link-2' onClick={openPanel}>
+                                                        <p>View</p>
+                                                    </div>
+                                                    <div className='sh-btn-link' onClick={() => handleShareClick(item)}>
+                                                        <p>Share</p>
+                                                    </div>
+                                                    </div>
                                                 </li>
                                             ))}
+
                                         </ul>
                                     </div>
                                 ) : (
@@ -866,21 +875,14 @@ function AccountDashboard() {
                             )}
                         </p>
 
-                        <p className='at-h1'>Add Tickets +</p>
+                            <p>Paste Links</p>
 
-                        <div className='att-row'>
+                            <input />
 
 
 
-                        <div className='at-bbls'>
-                            <p>Venue</p>
-                        </div> <div className='at-bbls'>
-                            <p>Food</p>
-                        </div> <div className='at-bbls'>
-                            <p>Custom</p>
-                        </div>
-
-                        </div>
+                            <p>Paste Prices</p>
+                            <input />
 
 
 

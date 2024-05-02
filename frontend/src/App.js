@@ -10,6 +10,7 @@ import AuthenticatedRoute from './pages/AuthenticationRoute';
 import { Navigate } from 'react-router-dom';
 import { supabase } from './supabase';
 import Signin from './pages/Signin';
+import EventPage from './pages/EventPage';
 
 
 
@@ -76,7 +77,8 @@ function App() {
     <Route path="/demo-dash" element={<DemoScreen />} />
     <Route path='/signup' element={<SignUp />} />
     <Route path="/account-dashboard" element={<AccountDashboard  />} />  
-    <Route path="/signin" element={<Signin />} />  
+    <Route path="/signin" element={<Signin />} /> 
+    <Route path="/event/:eventId" element={<EventPage />} /> 
   </Routes>
  </Router>
 

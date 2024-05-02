@@ -64,8 +64,8 @@ function Landing() {
 
 <div className='man-split-cat'>
     <div>
-        <p>Category</p>
-        <p>Date</p>
+        <p className='ft-bold'>2024 Family Summer Trip 🏝</p>
+        <p>August 23 ,2024</p>
     </div>
 
     <p>$20.00</p>
@@ -77,25 +77,50 @@ function Landing() {
 
 
     <div className='inner-split-cat-row'>
-        <div className='iscr-box'>
-            <p>Your Share</p>
+        <div className='iscr-box-hp-main'>
+
+            <div className='iscr-box-hp'>
+            <img style={{height: 50, width: 50,borderRadius: 100, objectFit: 'cover', marginRight: 10}} src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D" />
+            <p>You</p>
+            </div>
+
             <p>$10</p>
         </div>
 
-        <div className='iscr-box'>
-            <p>Your groups share</p>
+        <div className='iscr-box-hp-main'>
+
+            <div className='iscr-box-hp'>
+            <img style={{height: 50, width: 50,borderRadius: 100, objectFit: 'cover', marginRight: 10}} src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D" />
+            <p>Monica</p>
+            </div>
+
             <p>$10</p>
         </div>
+
+        <div className='iscr-box-hp-main'>
+
+            <div className='iscr-box-hp'>
+            <img style={{height: 50, width: 50,borderRadius: 100, objectFit: 'cover', marginRight: 10}} src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D" />
+            <p>Zoe</p>
+            </div>
+
+            <p>$10</p>
+        </div>
+
+        {/* <div className='iscr-box'>
+            <p>Your groups share</p>
+            <p>$10</p>
+        </div> */}
     </div>
 </div>
 
 
 
-<input className='iscr-input' placeholder='Your message (Optional)' />
 
 
 
-<div className='ct-split-btn'>
+
+<div className='ct-split-btn-hp'>
     <p>Send Payment 🎉</p>
 </div>
 
