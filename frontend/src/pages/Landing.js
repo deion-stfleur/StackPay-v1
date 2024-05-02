@@ -52,6 +52,57 @@ function Landing() {
         <div className='ms-lr-col-container'>
             <img className='main-img' src="https://images.unsplash.com/photo-1616077167599-cad3639f9cbd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
         </div>
+
+
+        <div className='ms-mid-2-comp'>
+
+            <p className='ms-mid-h3'>Send money in a heartbeat!</p>
+
+
+            <div className='ms-mid-right'>
+            <div>
+
+<div className='man-split-cat'>
+    <div>
+        <p>Category</p>
+        <p>Date</p>
+    </div>
+
+    <p>$20.00</p>
+</div>
+
+
+<div>
+    <p className='sr-h3'>Split ratio</p>
+
+
+    <div className='inner-split-cat-row'>
+        <div className='iscr-box'>
+            <p>Your Share</p>
+            <p>$10</p>
+        </div>
+
+        <div className='iscr-box'>
+            <p>Your groups share</p>
+            <p>$10</p>
+        </div>
+    </div>
+</div>
+
+
+
+<input className='iscr-input' placeholder='Your message (Optional)' />
+
+
+
+<div className='ct-split-btn'>
+    <p>Send Payment 🎉</p>
+</div>
+
+
+</div>
+            </div>
+        </div>
       </section>
         
 
@@ -95,7 +146,7 @@ function Landing() {
 
                 <div className='inner-features-row'>
 
-                <div className='ifr-box'>
+                <div id="tr-rot-1" className='ifr-box'>
 
                     <div className='iifr-box'>
                     <p className='fbox-title'>Plan</p>
@@ -103,7 +154,7 @@ function Landing() {
                     </div>
                 </div>
 
-                <div className='ifr-box'>
+                <div id="tr-rot-2" className='ifr-box'>
 
                     <div className='iifr-box'>
                     <p className='fbox-title'>Pool</p>
@@ -120,7 +171,7 @@ function Landing() {
                     </div>
                 </div>
 
-                <div className='ifr-box'>
+                <div id="tr-rot-3" className='ifr-box'>
 
                     <div className='iifr-box'>
                     <p className='fbox-title'>Split</p>
@@ -134,6 +185,28 @@ function Landing() {
 
           
         </div>
+
+
+        <section>
+
+        <div className='main-gs-last'>
+
+            <div>
+                <p className='main-hp-last-h1'>Get started in minutes</p>
+                <p className='main-hp-last-sub'>Set up your group payment account quickly and easily with our streamlined process — available on both web and mobile app!</p>
+            </div>
+
+            <ul>
+                <li className='main-gs-li'>Sign up with your email address.</li>
+                <li className='main-gs-li'>Add your group and invite members.</li>
+                <li className='main-gs-li'>Contribute and manage funds.</li>
+                <li className='main-gs-li'>Track transactions and payments in real-time.</li>
+            </ul>
+
+        </div>
+        </section>
+
+
     </div>
     </>
   )

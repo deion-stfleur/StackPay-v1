@@ -7,6 +7,34 @@
   margin-top: 10px;
 }
 
+
+.main-gs-last {
+  max-width: 1800px;
+  margin: auto;
+  width: 90%;
+  margin-bottom: 90px;
+}
+
+.main-hp-last-h1 {
+  font-size: 76px;
+  line-height: 103%;
+  font-weight: bold;
+  width: 40%;
+  margin-bottom: unset;
+}
+
+.main-hp-last-sub {
+  font-size: 24px;
+    max-width: 800px;
+    line-height: 34px;
+}
+
+.main-gs-li {
+  font-size: 24px;
+  line-height: 56px;
+}
+
+
 body, html {
   margin: 0;
   padding: 0;
@@ -339,16 +367,41 @@ input {
 .main-img {
   width: 100%;
     object-fit: cover;
-    max-height: 520px;
+    max-height: 320px;
     margin-top: 90px;
     margin-bottom: 90px;
+}
+
+.ms-mid-2-comp {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  align-items: flex-start;
+  width: 95%;
+}
+
+.ms-mid-h3 {
+  color: white;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 103%;
+  width: 40%;
+}
+
+.ms-mid-right {
+  width: 56%;
+  margin-bottom: 90px;
+  background-color: white;
+  border-radius: 23px;
+  padding: 9px;
 }
 
 .main-second-section {
   display: flex;
   align-items: center;
-  margin-bottom: 140px !important;
-  margin-top: 66px !important;
+  margin-bottom: 220px !important;
+  margin-top: 126px !important;
   width: 95%;
   margin: auto;
 }
@@ -744,11 +797,9 @@ div#root {
 
 
 .inner-features-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
   width: 95%;
   margin: auto;
+  max-width: 1190px;
 }
 
 .ct-pan-btn {
@@ -839,9 +890,22 @@ div#root {
 
 .ifr-box {
   border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 34px;
   flex: 1 1 492px;
   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.17);
+  margin-bottom: 138px;
+}
+
+#tr-rot-1 {
+  transform: rotate(-4deg);
+}
+
+#tr-rot-2 {
+  transform: rotate(-1deg);
+}
+
+#tr-rot-3 {
+  transform: rotate(-3deg);
 }
 
 .fbox-title {
@@ -852,9 +916,8 @@ div#root {
 }
 
 .fbox-sub {
-  font-size: 19px;
+  font-size: 21px;
   line-height: 30px;
-  max-width: 330px;
 }
 
 
@@ -957,11 +1020,42 @@ font-size: 20px;
   .sign-up-btn {
     width: 96%;
   }
+
+  .ifr-box {
+    margin-bottom: 38px;
+  }
+
+  .main-hp-last-h1 {
+    width: unset;
+  }
   
   .group-box {
     width: unset;
   }
 
+  .ms-mid-2-comp {
+    display: block;
+    max-width: unset;
+    margin-bottom: unset;
+    padding-bottom: 60px;
+    width: 95%;
+    margin: auto;
+  }
+
+  .ms-mid-h3 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 103%;
+    text-align: center;
+    width: unset;
+}
+
+.ms-mid-right {
+  width: unset;
+  margin-bottom: unset;
+
+}
   .signup-form {
     max-width: unset;
     width: 70%;
@@ -1020,6 +1114,52 @@ font-size: 20px;
   width: 40%;
 }
 
+.cc-input-col {
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.at-h1 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.att-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.at-bbls {
+  border-radius: 100px;
+  border: 1px solid blue;
+  padding: 4px;
+  cursor: pointer;
+  width: 29%;
+  margin-bottom: 35px;
+}
+
+.at-bbls p {
+  margin-top: unset;
+  margin-bottom: unset;
+  text-align: center;
+}
+
+.group-box img {
+  width: 100% !important;
+}
+
+.cc-input {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+.cc-input-2 {
+  padding: 6px;
+}
+
 @media (max-width: 991px) {
   .main-row {
     display: unset;
@@ -1046,7 +1186,7 @@ font-size: 20px;
   .main-img {
     width: 100%;
     object-fit: cover;
-    max-height: 520px;
+    max-height: 320px;
     margin-top: 50px;
     margin-bottom: 30px;
 }
