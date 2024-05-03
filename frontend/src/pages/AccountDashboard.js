@@ -14,6 +14,8 @@ import { PiDotsThreeCircleDuotone } from "react-icons/pi";
 import { FaPen } from "react-icons/fa";
 import { createClient } from '@supabase/supabase-js';
 import axios from 'axios';
+import { IoMdMenu } from "react-icons/io";
+
 
 
 
@@ -31,6 +33,12 @@ function AccountDashboard() {
     const [email, setEmail] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [userInfo, setUserInfo] = useState(null);
+    const [toolTipVisible, setToolTipVisible] = useState(false)
+
+
+    const handleMenuClick = () => {
+        setToolTipVisible((prevVisibility) => !prevVisibility);
+    }
     
 
 
@@ -165,6 +173,7 @@ function AccountDashboard() {
     const handleClick = (filter) => {
         setSelectedFilter(filter);
         navigate(`#${filter}`);
+        handleMenuClick();
     }
 
     const [isOpen, setIsOpen] = useState(false);
@@ -404,7 +413,23 @@ function AccountDashboard() {
 
                 </div>
                 <div className='right-panel'>
+                    <div className='mob-menu-container'>
+                          <IoMdMenu className='mob-menu' onClick={handleMenuClick} />
+                    </div>
 
+                    {toolTipVisible && (
+                <div className='tooltip'>
+                    {/* Tooltip content goes here */}
+                    {/* <p>This is a tooltip with options.</p> */}
+                    <ul className='tlmbct-1'>
+                        <li onClick={() => handleClick('activity')}>Activity</li>
+                        <li onClick={() => handleClick('groups')}>Groups</li>
+                        <li onClick={() => handleClick('account')}>Account</li>
+                        <li onClick={handleSignOut}>Logout</li>
+
+                    </ul>
+                </div>
+            )}
                     {selectedFilter === 'activity' && <div>
 
                         <p className='no-tr-history'>No transaction history</p>
@@ -452,7 +477,7 @@ function AccountDashboard() {
                                         <p className='exp-h3'>Travel</p>
                                     </div>
 
-                                    <div className='exp-btn' onClick={openPanel}>
+                                    <div id="mid-exp-btn" className='exp-btn' onClick={openPanel}>
                                         <FaHome className='exp-logo' />
                                         <p className='exp-h3'>Home</p>
                                     </div>

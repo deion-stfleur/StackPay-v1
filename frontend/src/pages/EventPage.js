@@ -42,11 +42,14 @@ function EventPage() {
 
     // Render the event data on the page
     return (
-        <div>
+        <div className='ev-comp'>
+
+            <div className='ev-inner-comp'>
             <h1>Event Details</h1>
             <p>Members: {eventData.phoneNumber}</p>
             {/* Display more event data as needed */}
             <p>More event data can be displayed here...</p>
+            </div>
         </div>
     );
 }

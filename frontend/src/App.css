@@ -223,6 +223,31 @@ text-decoration: unset;
 font-size: 22px;
 }
 
+.ev-comp {
+  height: 100%;
+}
+
+.mob-menu-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mob-menu-container {
+  display: none;
+}
+
+.mob-menu {
+  padding: 12px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.ev-inner-comp {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
 label {
   font-size: 21px;
   font-weight: bold;
@@ -1083,11 +1108,81 @@ font-size: 20px;
   margin-bottom: 12px;
 }
 
+.tooltip {
+  position: absolute;
+  right: 12px;
+  top: 40px;
+  background-color: white;
+  border-radius: 4px;
+  padding-right: 11px;
+}
+
+.tlmbct-1 li {
+list-style: none;
+margin-bottom: 5px;
+}
+
+#mid-exp-btn {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+@media (min-width: 767px) {
+  .tlmbct-1 {
+    display: none;
+  }
+}
+
 
 @media (max-width: 767px) {
   .sign-up-btn {
     width: 96%;
   }
+
+  .main-prof-box {
+    margin-top: unset;
+  }
+
+  .exp-btn {
+    padding: unset;
+    margin: unset;
+  }
+
+  .exp-logo {
+    font-size: 30px;
+    margin-bottom: 10px !important;
+    margin: auto;
+    display: block;
+    margin-top: 12px !important;
+}
+
+.exp-h3 {
+  font-weight: bold;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px !important;
+}
+
+  .acc-info-btn-row {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .prof-row {
+    display: none;
+  }
+
+  .shared-exp-row {
+    margin-top: unset;
+  }
+
+
+.mob-menu-container {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
 
   .ifr-box {
     margin-bottom: 38px;
