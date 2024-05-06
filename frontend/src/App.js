@@ -88,9 +88,17 @@ function App() {
 
     <div>
 
+        <div className='footer-inner'>
+
       <div>
-    <p>2024 StackPay All Rights reserved. </p>
+        <p className='footer-h1-logo'>StackPay</p>
+        <p className='footer-p-copy'>StackPay is not a bank. Banking services provided by third party.</p>
       </div>
+
+      <div className='footer-pos'>
+      <p>2024 StackPay All Rights reserved. </p>
+      </div>
+        </div>
 
     </div>
 

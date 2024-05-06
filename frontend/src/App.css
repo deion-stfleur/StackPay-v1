@@ -66,7 +66,13 @@ html {
 
 .rightPanel {
   width: 60%;  /* Set the width of the right panel to 60% */
-  background-color: #141414;;
+  /* background-color: #141414;; */
+}
+
+.sumn-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 
@@ -105,7 +111,7 @@ html {
   width: 16%;
   /* background-color: #f4f4f4; */
   padding: 20px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   overflow-y: auto;
 }
 
@@ -117,6 +123,7 @@ html {
   overflow-y: auto;
   background-color: #f4f4f4;
   margin-top: unset;
+  margin-bottom: unset;
 }
 
 .filter {
@@ -460,9 +467,39 @@ input {
 }
 
 footer {
+  margin: auto;
+  height: 255px;
+  background-color: #f2f2f2;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-h1-logo {
+  color: rgb(24, 108, 211);
+  font-size: 47px;
+  margin-bottom: unset;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+
+.footer-p-copy {
+  max-width: 300px;
+  line-height: 22px;
+  font-size: 17px;
+}
+
+
+
+.footer-pos {
+  text-align: end;
+    position: absolute;
+    right: 15px;
+    top: 73%;
+}
+
+.footer-inner {
   width: 95%;
   margin: auto;
-  height: 70px;
 }
 
 div#root {
@@ -956,6 +993,11 @@ div#root {
   margin-bottom: 138px;
 }
 
+.ifr-box:hover {
+  box-shadow: 0px 20px 18px 0px rgba(0, 0, 0, 0.17);
+}
+
+
 #tr-rot-1 {
   transform: rotate(-4deg);
 }
@@ -1406,7 +1448,8 @@ margin-bottom: 5px;
   margin-bottom: 40px;
 }
 footer {
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  height: 348px;
 }
 
 .left-panel {
