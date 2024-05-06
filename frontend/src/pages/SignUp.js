@@ -34,7 +34,12 @@ const SignUp = () => {
         } catch (error) {
           console.error('Error signing up:', error.message);
         //   alert('Error signing up:', error.message);
-        setError('Please fill out all the information correctly :)')
+        setError('Check your email for more details. If no details, please try signing up again.')
+        setFirstName('')
+        setLastName('')
+        setEmail('')
+        setPassword('')
+        setPhoneNumber('')
         }
       };
 

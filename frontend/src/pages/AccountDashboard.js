@@ -7,7 +7,6 @@ import { BsBank2 } from "react-icons/bs";
 import { MdOutlinePayment, MdAccountCircle, MdOutlineVerified } from "react-icons/md";
 import { IoLogInOutline } from "react-icons/io5";
 import { RxAvatar } from "react-icons/rx";
-import { loadStripe } from '@stripe/stripe-js';
 import { SiYourtraveldottv } from "react-icons/si";
 import { FaHome } from "react-icons/fa";
 import { PiDotsThreeCircleDuotone } from "react-icons/pi";
@@ -15,9 +14,7 @@ import { FaPen } from "react-icons/fa";
 import { createClient } from '@supabase/supabase-js';
 import axios from 'axios';
 import { IoMdMenu } from "react-icons/io";
-
-
-
+import { IoIosPeople } from "react-icons/io";
 
 
 
@@ -366,6 +363,10 @@ function AccountDashboard() {
 
         fetchData();
     }, [user]);
+
+    const paymentElementOptions = {
+        layout: "tabs"
+      }
     return (
         <div>
             <div className='acct-dash-sep'></div>
@@ -519,7 +520,11 @@ function AccountDashboard() {
                                                 <li className='group-box' key={item.id}>
                                                     <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww" style={{ width: '90%', margin: 'auto' }} />
                                                     {/* <p>User ID: {item.user_id}</p> */}
+                                                    
+                                                    <div className='mb-er-lgn'>
+                                                    <IoIosPeople style={{fontSize: 18, marginRight: 5}} />
                                                     <p>Members: {item.phoneNumber}</p>
+                                                    </div>
                                                     {/* Add more data fields as needed */}
                                                     
                                                     <div>
@@ -753,6 +758,10 @@ function AccountDashboard() {
 
                             </div>
 
+                        
+                            
+
+                           
 
 
                             <div className='cc-input-col'>

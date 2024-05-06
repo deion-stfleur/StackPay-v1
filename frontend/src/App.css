@@ -320,6 +320,7 @@ label {
   padding: 4px;
   font-size: 18px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .main-h1 {
@@ -851,7 +852,7 @@ div#root {
 }
 
 .error {
-  color: red;
+  color: #0024d5;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
@@ -1125,6 +1126,11 @@ margin-bottom: 5px;
 #mid-exp-btn {
   margin-left: 7px;
   margin-right: 7px;
+}
+
+.mb-er-lgn {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 767px) {
