@@ -11,6 +11,7 @@ import { Navigate } from 'react-router-dom';
 import { supabase } from './supabase';
 import Signin from './pages/Signin';
 import EventPage from './pages/EventPage';
+import Blog from './pages/Blog'
 
 
 
@@ -79,6 +80,7 @@ function App() {
     <Route path="/account-dashboard" element={<AccountDashboard  />} />  
     <Route path="/signin" element={<Signin />} /> 
     <Route path="/event/:eventId" element={<EventPage />} /> 
+    <Route path="/spill-with-stack" element={<Blog />} />
   </Routes>
  </Router>
 
@@ -90,10 +92,29 @@ function App() {
 
         <div className='footer-inner'>
 
-      <div>
-        <p className='footer-h1-logo'>StackPay</p>
-        <p className='footer-p-copy'>StackPay is not a bank. Banking services provided by third party.</p>
-      </div>
+          <div className='footer-inner-row-col'>
+            <div>
+              <p className='footer-h1-logo'>StackPay</p>
+              <p className='footer-p-copy'>StackPay is not a bank. Banking services provided by third party.</p>
+            </div>
+
+            <div>
+            <a className='tt00' href="/spill-with-stack" target="_blank" rel="noopener noreferrer">
+              <p>Spill with Stack</p>
+          </a>
+          <a className='tt00' href="/#learn-more" target="_blank" rel="noopener noreferrer">
+              <p>Learn More</p>
+          </a>
+          <a href="/signup" className='tt00' target="_blank" rel="noopener noreferrer">
+              <p>Get Started</p>
+          </a>
+
+            </div>
+
+          </div>
+
+
+
 
       <div className='footer-pos'>
       <p>2024 StackPay All Rights reserved. </p>

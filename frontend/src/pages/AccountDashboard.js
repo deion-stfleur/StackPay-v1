@@ -15,8 +15,12 @@ import { createClient } from '@supabase/supabase-js';
 import axios from 'axios';
 import { IoMdMenu } from "react-icons/io";
 import { IoIosPeople } from "react-icons/io";
+import PaymentForm from './PaymentForm';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 
+const stripe = loadStripe('sk_test_4eC39HqLyjWDarjtT1zdp7dc')
 
 
 function AccountDashboard() {
@@ -364,9 +368,20 @@ function AccountDashboard() {
         fetchData();
     }, [user]);
 
-    const paymentElementOptions = {
-        layout: "tabs"
-      }
+    const [clientSecret, setClientSecret] = useState(null);
+ 
+    useEffect(() => {
+        axios
+            .post("http://localhost:4000/create-payment-intent", {
+                items: [{ id: 1, name: "momos", amount: 40.00 }],
+            })
+            .then((resp) => setClientSecret(resp.data.clientSecret));
+    }, []);
+ 
+    const options = {
+        clientSecret,
+        theme: "stripe",
+    };
     return (
         <div>
             <div className='acct-dash-sep'></div>
@@ -747,7 +762,7 @@ function AccountDashboard() {
 
                             <p onClick={handleLeftArrowClick}>Back</p>
 
-                            <div class="credit-card">
+                            {/* <div class="credit-card">
                                 <div class="card-number">1234 5678 9012 3456</div>
                                 <div class="card-holder">Your Card <FaPen className='pen' /></div>
                                 <div class="expiry-date">12/24</div>
@@ -756,7 +771,13 @@ function AccountDashboard() {
                                     <div class="mastercard"></div>
                                 </div>
 
-                            </div>
+                            </div> */}
+
+                        {clientSecret && (
+                                        <Elements stripe={stripe} options={options}>
+                                            <PaymentForm />
+                                        </Elements>
+                                    )}
 
                         
                             
