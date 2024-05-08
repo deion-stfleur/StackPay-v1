@@ -448,7 +448,7 @@ function AccountDashboard() {
             )}
                     {selectedFilter === 'activity' && <div>
 
-                        <p className='no-tr-history'>No transaction history</p>
+                        <p className='no-tr-history'>No transaction history!</p>
                         <p className='inner-tr-history'>Import transactions</p>
 
 
