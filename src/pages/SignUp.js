@@ -18,7 +18,7 @@ const SignUp = () => {
             email,
             password, 
             options: {
-                emailRedirectTo: 'http://localhost:3001/account-dashboard'
+                emailRedirectTo: 'http://localhost:3000/account-dashboard'
             }
           });
     
