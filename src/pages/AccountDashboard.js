@@ -17,12 +17,12 @@ import { IoMdMenu } from "react-icons/io";
 import { IoIosPeople } from "react-icons/io";
 import PaymentForm from './PaymentForm';
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+import { Elements, PaymentElement } from "@stripe/react-stripe-js";
 
 
-const stripe = loadStripe('sk_test_4eC39HqLyjWDarjtT1zdp7dc')
 
 
+const stripe = loadStripe('pk_test_51P6YezFRyjQFCphqLzC7vKxTHBZ7Z7rwMoNIYrw1EecNj6TP4OHaosoIvWz1zebye9BMpHxZEBTXiEtzpzV6NWRX00QgVqYMBC')
 function AccountDashboard() {
 
     const [selectedFilter, setSelectedFilter] = useState('activity')
@@ -368,7 +368,7 @@ function AccountDashboard() {
         fetchData();
     }, [user]);
 
-    const [clientSecret, setClientSecret] = useState(null);
+    const [clientSecret, setClientSecret] = useState("");
  
     useEffect(() => {
         axios
@@ -380,8 +380,41 @@ function AccountDashboard() {
  
     const options = {
         clientSecret,
-        theme: "stripe",
+        // theme: "stripe",
     };
+
+    const [prices, setPrices] = useState([0]);
+    const [members, setMembers] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [averagePrice, setAveragePrice] = useState(0);
+
+    // Handle price input changes
+    const handlePriceChange = (index, value) => {
+        // Update the price at the specified index
+        const updatedPrices = [...prices];
+        updatedPrices[index] = parseFloat(value) || 0;
+        setPrices(updatedPrices);
+    };
+
+    // Handle adding new price input
+    const addPriceInput = () => {
+        setPrices([...prices, 0]);
+    };
+
+    // Handle number of members change
+    const handleMembersChange = (value) => {
+        const numMembers = parseInt(value) || 1;
+        setMembers(numMembers);
+    };
+
+    // Calculate total price and average price per member
+    useEffect(() => {
+        const total = prices.reduce((sum, price) => sum + price, 0);
+        setTotalPrice(total);
+        setAveragePrice(members > 0 ? total / members : 0);
+    }, [prices, members]);
+
+   
     return (
         <div>
             <div className='acct-dash-sep'></div>
@@ -774,10 +807,10 @@ function AccountDashboard() {
                             </div> */}
 
                         {clientSecret && (
-                                        <Elements stripe={stripe} options={options}>
-                                            <PaymentForm />
+                                        <Elements stripe={stripe} options={{clientSecret}}>
+                                            <PaymentForm  />
                                         </Elements>
-                                    )}
+                                    )}x
 
                         
                             
@@ -934,10 +967,39 @@ function AccountDashboard() {
 
                             <input />
 
+                            <div>
 
+            <div>
+                <p>Total Price: ${totalPrice.toFixed(2)}</p>
+                <p>Average Price per Member: ${averagePrice.toFixed(2)}</p>
+            </div>
 
-                            <p>Paste Prices</p>
-                            <input />
+            {prices.map((price, index) => (
+                <div key={index}>
+                    <label>
+                        Price {index + 1}:
+                        <input
+                            type="number"
+                            value={price}
+                            onChange={(e) => handlePriceChange(index, e.target.value)}
+                        />
+                    </label>
+                </div>
+            ))}
+
+            <button onClick={addPriceInput}>Add Price Input</button>
+
+            <div>
+                <label>
+                    Number of Members:
+                    <input
+                        type="number"
+                        value={members}
+                        onChange={(e) => handleMembersChange(e.target.value)}
+                    />
+                </label>
+            </div>
+        </div>
 
 
 

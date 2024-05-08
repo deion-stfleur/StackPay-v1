@@ -1,8 +1,12 @@
-import React from 'react';
-import '../App.css';
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { IoChevronBack } from "react-icons/io5";
 
-function Blog() {
+
+function ArticleDetails() {
+    const { title } = useParams();
+
     const articles = [
         {
           img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
@@ -93,39 +97,39 @@ function Blog() {
           }
     ];
 
-    
-    const Article = ({ article }) => {
-        return (
-            <div className='art-icle-container'>
+    // Find the article by title
+    const article = articles.find((article) => article.title === decodeURIComponent(title));
 
-                <div className='art-icle-col'>
-                <img src={article.img} alt={article.title} className='blog-img-main' />
-                
-                <div className='art-icl-mn'>
-                <h2>{article.title}</h2>
-                <p className='art-cat'>{article.category}</p>
-                <p>{article.description}</p>
-                <Link to={`/article/${encodeURIComponent(article.title)}`}>
-                            Read more
-                        </Link>
-                </div>
-                </div>
-            </div>
-        );
-    };
+    if (!article) {
+        return <p>Article not found.</p>;
+    }
 
     return (
-        <div className='blg-ht'>
-            <p className='blg-h1'>Blog</p>
-            <p className='blg-copy'>Spill with Stack</p>
-            <div className="article-list">
-                {articles.map((article, index) => (
-                    // Use the index as the key if there is no unique identifier in the data
-                    <Article key={index} article={article} />
-                ))}
+
+        <>
+        <div className='art-hgt'>
+            <Link to="/spill-with-stack" className='art-back'>
+                <div style={{display: 'flex',alignItems: 'center'}}>
+                    <IoChevronBack />    
+                    <p>Back</p> 
+                </div>
+            </Link>
+        <div className="article-details">
+
+            <div className='art-det-left'>
+            <img src={article.img} alt={article.title} />
+            </div>
+
+            <div className='art-det-right'>
+            <h1>{article.title}</h1>
+            <p>Category: {article.category}</p>
+            <p>{article.description}</p>
             </div>
         </div>
+        </div>
+        </>
     );
+
 }
 
-export default Blog;
+export default ArticleDetails;

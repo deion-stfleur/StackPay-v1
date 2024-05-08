@@ -12,6 +12,7 @@ import { supabase } from './supabase';
 import Signin from './pages/Signin';
 import EventPage from './pages/EventPage';
 import Blog from './pages/Blog'
+import ArticleDetails from './pages/ArticleDetails';
 
 
 
@@ -81,6 +82,7 @@ function App() {
     <Route path="/signin" element={<Signin />} /> 
     <Route path="/event/:eventId" element={<EventPage />} /> 
     <Route path="/spill-with-stack" element={<Blog />} />
+    <Route path="/article/:title" element={<ArticleDetails />} />
   </Routes>
  </Router>
 
