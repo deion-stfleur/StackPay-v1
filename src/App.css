@@ -1021,10 +1021,10 @@ div#root {
 
 .active-search-input {
   outline: none;
-    width: 95%;
-    padding: 7px;
-    border: unset;
-    border-bottom: 1px solid;
+  width: 95%;
+  padding: 7px;
+  border: 1px solid gray;
+  border-radius: 6px;
 }
 
 .dropdown-list {

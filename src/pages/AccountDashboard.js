@@ -19,6 +19,8 @@ import PaymentForm from './PaymentForm';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, PaymentElement } from "@stripe/react-stripe-js";
 import { IoChevronBack } from "react-icons/io5";
+import { CiCirclePlus } from "react-icons/ci";
+
 
 
 
@@ -903,8 +905,8 @@ function AccountDashboard() {
                 <div className='modal-dash'>
                     <div className='modal-content-dash'>
                         <span className='close-dash' onClick={handleCloseModal}>&times;</span>
-                        <h2 style={{ marginBottom: 6 }}>Create Group</h2>
-                        <p style={{ color: 'gray', marginTop: 'unset' }}>Search for users.</p>
+                        <h2 style={{ marginBottom: 6, textAlign: 'center', marginTop: 6 }}>Create Group</h2>
+                        {/* <p style={{ color: 'gray', marginTop: 'unset' }}>Search for users.</p> */}
 
                         <input
                             placeholder='Enter Phone Number'
@@ -932,13 +934,13 @@ function AccountDashboard() {
                                     <p key={index}>{phoneNumber}</p>
                                 ))
                             ) : (
-                                <p>No phone numbers selected</p>
+                                <p style={{display: 'none'}}>No phone numbers selected</p>
                             )}
                         </p>
-
+{/* 
                             <p>Paste Links</p>
 
-                            <input />
+                            <input /> */}
 
                             <div>
 
@@ -957,12 +959,14 @@ function AccountDashboard() {
                             onChange={(e) => handlePriceChange(index, e.target.value)}
                         />
                     </label>
+                    <CiCirclePlus onClick={addPriceInput} />
                 </div>
             ))}
 
-            <button onClick={addPriceInput}>Add Price Input</button>
+            {/* <button onClick={addPriceInput}>Add Price Input</button> */}
 
-            <div>
+
+            <div style={{marginTop: 10}}>
                 <label>
                     Number of Members:
                     <input
