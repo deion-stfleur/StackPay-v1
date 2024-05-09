@@ -39,9 +39,7 @@ const PaymentForm = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <div>
-                        <h1>
-                            Complete your payment here!
-                        </h1>
+                       
                         <PaymentElement />
                         <div>
                             <button

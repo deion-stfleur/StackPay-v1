@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import { FaAngleRight } from "react-icons/fa6";
+
 
 function Blog() {
     const articles = [
@@ -38,55 +40,55 @@ function Blog() {
             description: "A comprehensive guide to creating a savings plan that works for you. Learn how to prioritize your goals, track your progress, and stay motivated to achieve your financial dreams."
           },
           {
-            img: 'https://images.unsplash.com/photo-1527422265102-22027ee90fcd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdvcmxkfGVufDB8MXwwfHx8MA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1633454301558-0adccf60386c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNyZWRpdCUyMGNhcmR8ZW58MHwxfDB8fHww',
             title: "Navigating the World of Credit Cards: Tips and Tricks",
             category: "Finance",
             description: "Credit cards can be powerful financial tools when used wisely. Learn how to choose the right card, manage your credit, and maximize rewards while avoiding debt."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1615920292619-d7ff7ce76d50?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFtaWx5JTIwdHJhdmVsfGVufDB8MXwwfHx8MA%3D%3D',
             title: "Family-Friendly Travel Destinations: Where to Go and What to Do",
             category: "Family",
             description: "Plan a memorable family vacation with these top travel destinations and activities. From amusement parks to cultural experiences, find something for everyone in your family."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://plus.unsplash.com/premium_photo-1682090817099-705e0206a895?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJ1ZGdldHxlbnwwfDF8MHx8fDA%3D',
             title: "Luxury on a Budget: How to Shop Smart and Stylish",
             category: "Shopping",
             description: "Discover how to achieve luxury style without overspending. Learn where to find designer deals, how to shop off-season, and other tricks to enjoy luxury fashion for less."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://plus.unsplash.com/premium_photo-1682090817099-705e0206a895?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJ1ZGdldHxlbnwwfDF8MHx8fDA%3D',
             title: "Travel Hacks: Saving Money on Flights, Hotels, and More",
             category: "Traveling",
             description: "Unlock the secrets to saving on your next trip. Learn how to find the best flight deals, negotiate hotel rates, and make the most of your travel budget."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1587613863965-74d82b39ef79?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwxfDB8fHww',
             title: "Effective Budgeting for Singles and Young Professionals",
             category: "Finance",
             description: "Craft a personal budget that works for your lifestyle and goals. This guide offers practical tips on budgeting, saving, and planning for a secure financial future."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1575279099331-ab1894fc7b97?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHNob3BwaW5nfGVufDB8MXwwfHx8MA%3D%3D',
             title: "Smart Shopping Tips for Families on a Budget",
             category: "Shopping",
             description: "Families can stretch their budgets with smart shopping strategies. Discover how to find deals on groceries, clothing, and household items while maintaining quality."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1635207947975-eb0b69ecfde7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA2fHxlY28lMjBmcmllbmRseXxlbnwwfDF8MHx8fDA%3D',
             title: "Eco-Friendly Fashion: Sustainable Choices for Every Budget",
             category: "Choosing Style",
             description: "Learn how to build an eco-friendly wardrobe without breaking the bank. From ethical brands to thrifting, find sustainable fashion options for every budget."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1506787497326-c2736dde1bef?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmluYW5jZXxlbnwwfDF8MHx8fDA%3D',
             title: "Making the Most of Loyalty Programs: Travel, Shopping, and Finance",
             category: "Smart Savings",
             description: "Maximize the benefits of loyalty programs across various areas of your life. Learn how to earn and redeem points effectively for travel, shopping, and finance."
           },
           {
-            img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
+            img: 'https://images.unsplash.com/photo-1564758913551-7212727c4b08?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZWF0aW5nfGVufDB8MXwwfHx8MA%3D%3D',
             title: "Culinary Adventures: Best Foodie Destinations Around the World",
             category: "Traveling",
             description: "Embark on a culinary journey to some of the world's best foodie destinations. From street food to gourmet experiences, discover places that will satisfy your taste buds."
@@ -105,9 +107,14 @@ function Blog() {
                 <h2>{article.title}</h2>
                 <p className='art-cat'>{article.category}</p>
                 <p>{article.description}</p>
-                <Link to={`/article/${encodeURIComponent(article.title)}`}>
+
+                <div className='rm0re0-row'>
+                <Link className='rm0re-link' to={`/article/${encodeURIComponent(article.title)}`}>
                             Read more
-                        </Link>
+                  </Link>
+
+                  <FaAngleRight />
+                </div>
                 </div>
                 </div>
             </div>

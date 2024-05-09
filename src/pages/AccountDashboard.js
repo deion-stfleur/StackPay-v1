@@ -18,6 +18,8 @@ import { IoIosPeople } from "react-icons/io";
 import PaymentForm from './PaymentForm';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, PaymentElement } from "@stripe/react-stripe-js";
+import { IoChevronBack } from "react-icons/io5";
+
 
 
 
@@ -793,9 +795,11 @@ function AccountDashboard() {
                         </div>}
                         {currentSection === 2 && <div>
 
-                            <p onClick={handleLeftArrowClick}>Back</p>
+                            
 
-                            {/* <div class="credit-card">
+                            <IoChevronBack style={{marginTop: 30}} onClick={handleLeftArrowClick} />  
+
+                            <div class="credit-card">
                                 <div class="card-number">1234 5678 9012 3456</div>
                                 <div class="card-holder">Your Card <FaPen className='pen' /></div>
                                 <div class="expiry-date">12/24</div>
@@ -804,47 +808,16 @@ function AccountDashboard() {
                                     <div class="mastercard"></div>
                                 </div>
 
-                            </div> */}
+                            </div>
 
                         {clientSecret && (
                                         <Elements stripe={stripe} options={{clientSecret}}>
                                             <PaymentForm  />
                                         </Elements>
-                                    )}x
+                                    )}
 
                         
-                            
-
-                           
-
-
-                            <div className='cc-input-col'>
-                                <div>
-                                    <input 
-                                    placeholder='Card Number' 
-                                    className='cc-input' 
-                                                                    />
-                                </div>
-
-                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                <input 
-                                placeholder='exp' 
-                                className='cc-input-2' 
-                             
-                                />
-                                <input 
-                                placeholder='cvv' 
-                                className='cc-input-2' 
-                               
-                                />
-                                </div>
-                            </div>
-
-
-
-
-
-                            <button id="btn-1-fix" className='ct-pan-btn' onClick={handleRightArrowClick}>Continue</button>
+                            {/* <button id="btn-1-fix" className='ct-pan-btn' onClick={handleRightArrowClick}>Continue</button> */}
 
                         </div>}
                         {currentSection === 3 && <div>
