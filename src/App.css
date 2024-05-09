@@ -7,6 +7,13 @@
   margin-top: 10px;
 }
 
+.xmn-comp {
+  max-width: 890px;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 200px;
+}
+
 
 .main-gs-last {
   max-width: 1800px;
@@ -15,8 +22,39 @@
   margin-bottom: 90px;
 }
 
+.xmn-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.gsblbtn {
+  background-color: #0024d5;
+  padding: 14px;
+  max-width: 140px;
+  margin: auto;
+  cursor: pointer;
+  margin-top: 55px;
+}
+
+.gsblbtn p {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 3px; 
+}
+
+.xmn-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .art-hgt {
   height: 100%;
+}
+
+.xmn-copy {
+  margin-bottom: 15px;
+  line-height: 24px;
 }
 
 .art-det-left {
@@ -1018,6 +1056,55 @@ div#root {
   max-width: 900px;
 }
 
+.main-onbd-blog-comp {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 90px;
+  border: 1px solid;
+  max-width: 1400px;
+}
+
+.main-con-blog {
+  padding: 2% 2% 0% 0%;
+}
+
+.mcb-h1 {
+  font-size: 26px;
+    font-weight: bold;
+    line-height: 35px;
+}
+
+.mcb-copy {
+  font-size: 14px;
+    line-height: 27px;
+    color: #0d0b0b;
+}
+
+.mcb-time {
+  font-size: 14px;
+  color: rgb(24, 108, 211);
+  font-weight: bold;
+}
+
+.mcb-rmore {
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+.main-onbd-blog-container {
+  display: flex;
+  /* align-items: center; */
+}
+
+.main-onbd-blog-container img {
+  width: 600px;
+  height: 400px;
+  margin-right: 50px;
+  object-fit: cover;
+}
+
 
 .active-search-input {
   outline: none;
@@ -1304,10 +1391,41 @@ margin-bottom: 5px;
 }
 
 
+
+@media (max-width: 1054px) {
+  .main-onbd-blog-container img {
+    width: 400px;
+    height: unset;
+  }
+
+  .mcb-rmore {
+    margin-bottom: 40px;
+  }
+}
+
+
 @media (max-width: 767px) {
   .sign-up-btn {
     width: 96%;
   }
+
+  .xmn-comp img {
+    width: 100%;
+  }
+
+  .main-con-blog {
+    padding: 2% 2% 0% 2%;
+  }
+
+  .main-onbd-blog-container {
+    display: block;
+  }
+
+  .main-onbd-blog-container img {
+    width: 100%;
+    margin-right: unset;
+  }
+
 
   /* .pment-scc-container {
     height: unset;

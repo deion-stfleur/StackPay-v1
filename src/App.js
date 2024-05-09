@@ -14,6 +14,7 @@ import EventPage from './pages/EventPage';
 import Blog from './pages/Blog'
 import ArticleDetails from './pages/ArticleDetails';
 import Success from './pages/Success';
+import HowTo from './pages/HowTo';
 
 
 
@@ -85,6 +86,7 @@ function App() {
     <Route path="/spill-with-stack" element={<Blog />} />
     <Route path="/article/:title" element={<ArticleDetails />} />
     <Route path="/success" element={<Success />} />
+    <Route path="/article/onboarding-blog" element={<HowTo />} />
   </Routes>
  </Router>
 

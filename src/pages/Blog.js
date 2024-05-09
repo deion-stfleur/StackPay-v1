@@ -5,6 +5,9 @@ import { FaAngleRight } from "react-icons/fa6";
 
 
 function Blog() {
+
+
+
     const articles = [
         {
           img: 'https://images.unsplash.com/photo-1600425426513-3edab55ddaab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RnpvM3p1T0hONnd8fGVufDB8fHx8fA%3D%3D',
@@ -125,6 +128,23 @@ function Blog() {
         <div className='blg-ht'>
             <p className='blg-h1'>Blog</p>
             <p className='blg-copy'>Spill with Stack</p>
+
+            <div className='main-onbd-blog-comp'>
+              <div className='main-onbd-blog-container'>
+                <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGJsb2d8ZW58MHwwfDB8fHww"  />
+
+                <div className='main-con-blog'>
+                <p className='mcb-h1'>Welcome to StackPay: Your Go-To Solution for Managing Group Expenses!</p>
+                <p className='mcb-copy'>Let's take you on a quick journey to explore all the amazing features of StackPay and how you can use them to manage your expenses effortlessly and help streamilne all your purchases.</p>
+                <p className='mcb-time'>5 min read</p>
+                <Link to="/article/onboarding-blog" style={{color: 'black'}}>
+                    <p className='mcb-rmore'>Read More</p>
+                </Link>
+                </div>
+              
+              </div>
+            </div>
+
             <div className="article-list">
                 {articles.map((article, index) => (
                     // Use the index as the key if there is no unique identifier in the data
